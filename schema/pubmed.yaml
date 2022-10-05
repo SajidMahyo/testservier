@@ -1,0 +1,10 @@
+- fields:
+  - name: id
+    type: int
+  - name: title
+    type: string
+  - name: date
+    type: date
+    format: "%d/%m/%Y"
+  - name: journal
+    type: string

@@ -1,0 +1,10 @@
+- fields:
+  - name: id
+    type: string
+  - name: scientific_title
+    type: string
+  - name: date
+    type: date
+    format: "%d %B %Y"
+  - name: journal
+    type: string

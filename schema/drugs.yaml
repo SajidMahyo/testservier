@@ -1,0 +1,5 @@
+- fields:
+  - name: atccode
+    type: string
+  - name: drug
+    type: string
