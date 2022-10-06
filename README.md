@@ -8,7 +8,7 @@ Pour executer le code il faudra commencer par installer les dépendances. Pour c
 ```
     pip install -r requirements.txt
 ```
-La première partie de l'énoncée est résolue dans le [main.py](https://github.com/SajidMahyo/testservier/blob/main/main%20.py).
+La première partie de l'énoncé est résolue dans le [main.py](https://github.com/SajidMahyo/testservier/blob/main/main%20.py).
 
 La question annexe est résolue dans le [main2.py](https://github.com/SajidMahyo/testservier/blob/main/main2.py).
 
@@ -55,7 +55,7 @@ GROUP BY client_id, product_type
 PIVOT(SUM(ventes) FOR product_type IN ('MEUBLE', 'DECO'))
 ```
 
-Sinon sans utiliser les fonctionnalités de BigQuery voici comment j'aurait réalisé la requête:
+Sinon, sans utiliser les fonctionnalités de BigQuery voici comment j'aurais réalisé la requête:
 ``` sql
 WITH ventes_client_type AS (
 SELECT client_id, product_type, SUM(prod_price*prod_qty) AS ventes
