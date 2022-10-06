@@ -4,7 +4,7 @@ from datetime import datetime
 import yaml
 import json
 
-from utils.errors import (
+from lib.errors import (
     SchemaNotMatchingData,
     UnknownType,
     NotHandledFileExtension
