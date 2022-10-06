@@ -7,12 +7,6 @@ from lib.export import writeOutputJson
 
 
 
-
-
-
-
-
-
 def formatDate(date):
     return date.strftime("%d, %B %Y") if not pd.isnull(date) else ""
 
@@ -28,8 +22,8 @@ def main():
     #initialize the output variable
     output = dict()
 
+    #Iterate through drug list and create the reference graph
     for index, drug in drugs.iterrows():
-
         journalRef = list()
         pubmedRef = list()
         clinicalTrialsRef = list()
@@ -44,6 +38,7 @@ def main():
 
 
         output[drug["drug"]] = {'atccode' : drug["atccode"], 'references' : {'pubmed': pubmedRef, 'clinical_trials' : clinicalTrialsRef, 'journals' : journalRef}}
+    #Write the graph to a JSON file
     writeOutputJson(output, "output/link_graph.json")
 
 

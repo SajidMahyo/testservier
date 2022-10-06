@@ -10,6 +10,7 @@ from lib.errors import (
     NotHandledFileExtension
 )
 
+
 def toString(elem):
     """Take an element as input and return the string associated. Return np.nan if the element doesn't correspond to what is expected"""
     if pd.isnull(elem):
