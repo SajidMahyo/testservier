@@ -10,13 +10,14 @@ from lib.errors import (
     NotHandledFileExtension
 )
 
+import re
 
 def toString(elem):
     """Take an element as input and return the string associated. Return np.nan if the element doesn't correspond to what is expected"""
     if pd.isnull(elem):
         return np.nan
     try:
-        return str(elem)
+        return re.sub(r'\\x..',r'', str(elem))
     except:
         return np.nan
 
@@ -71,7 +72,6 @@ def load_csv(path, fields):
         raise SchemaNotMatchingData(f"Csv table schema {df.columns} is not matching the inputed schema {fields}")
 
     df = applySchema(df, fields)
-
     return df
 
 def load_json(path, fields):
